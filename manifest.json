@@ -1,0 +1,23 @@
+{
+  "name": "Copy Clickup title",
+  "description": "Copy the title of a Clickup task name and Url to the clipboard",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["scripting", "activeTab"],
+  "action": {
+    "default_title": "Run Script"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "run-script": {
+     "suggested_key": {
+       "default": "Alt+C",
+       "mac": "Alt+C"
+     },
+     "description": "copy clickup title"
+   }
+  }
+
+}
