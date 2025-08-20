@@ -64,7 +64,7 @@ function copyClickupTitle() {
     const clipboardItem = new window.ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText });
     
     navigator.clipboard.write([clipboardItem]).then(function () {
-        let copiedLabels = document.querySelectorAll("cu-task-view-task-label  button > span")
+        let copiedLabels = document.querySelectorAll("cu-task-view-task-label button > span")
         for (let i = 0; i < copiedLabels.length; i++) {
             let copiedLabel = copiedLabels[i];
             let orgVal = copiedLabel.innerText

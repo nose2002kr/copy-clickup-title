@@ -1,0 +1,1 @@
+Load the directory from the `chrome://extensions`
