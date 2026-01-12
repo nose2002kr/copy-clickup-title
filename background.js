@@ -22,9 +22,13 @@ chrome.commands.onCommand.addListener((command) => {
 });
 
 function copyClickupTitle() {
+    // document.querySelector("#app-root > cu-app-view > cu-task-keeper > cu-task-view > div > div > div > cu-task-view-body > div > cu-task-view-task-content >
+    //  div.cdk-virtual-scrollable.cu-task-view-task-content__scrollable.ng-tns-c1455730629-8.ng-star-inserted > div.cu-task-view-task-content__body.ng-tns-c1455730629-8 >
+    //  cu-task-hero-section > div.cu-task-hero-section__actions.ng-tns-c1845752313-9.ng-star-inserted > cu-task-view-task-label > cu-task-id-button > button")
+    let selector = "cu-task-view-task-label cu-task-id-button button"
 
     function takeId() {
-        let button = document.querySelector("cu-task-view-task-label button")
+        let button = document.querySelector(selector)
         if (!button) {
             console.error("No button found");
             return;
@@ -64,7 +68,7 @@ function copyClickupTitle() {
     const clipboardItem = new window.ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText });
     
     navigator.clipboard.write([clipboardItem]).then(function () {
-        let copiedLabels = document.querySelectorAll("cu-task-view-task-label button > span")
+        let copiedLabels = document.querySelectorAll(selector)
         for (let i = 0; i < copiedLabels.length; i++) {
             let copiedLabel = copiedLabels[i];
             let orgVal = copiedLabel.innerText
